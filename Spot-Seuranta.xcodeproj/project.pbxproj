@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2155BF5E299FD60600CEF170 /* Spot_SeurantaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2155BF5D299FD60600CEF170 /* Spot_SeurantaApp.swift */; };
+		2155BF60299FD60600CEF170 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2155BF5F299FD60600CEF170 /* ContentView.swift */; };
+		2155BF62299FD60800CEF170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2155BF61299FD60800CEF170 /* Assets.xcassets */; };
+		2155BF65299FD60800CEF170 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2155BF64299FD60800CEF170 /* Preview Assets.xcassets */; };
+		2155BF6F299FD60800CEF170 /* Spot_SeurantaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2155BF6E299FD60800CEF170 /* Spot_SeurantaTests.swift */; };
+		2155BF79299FD60800CEF170 /* Spot_SeurantaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2155BF78299FD60800CEF170 /* Spot_SeurantaUITests.swift */; };
+		2155BF7B299FD60800CEF170 /* Spot_SeurantaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2155BF7A299FD60800CEF170 /* Spot_SeurantaUITestsLaunchTests.swift */; };
+		2155BF88299FD66500CEF170 /* entso.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2155BF87299FD66500CEF170 /* entso.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2155BF6B299FD60800CEF170 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2155BF52299FD60600CEF170 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2155BF59299FD60600CEF170;
+			remoteInfo = "Spot-Seuranta";
+		};
+		2155BF75299FD60800CEF170 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2155BF52299FD60600CEF170 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2155BF59299FD60600CEF170;
+			remoteInfo = "Spot-Seuranta";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2155BF5A299FD60600CEF170 /* Spot-Seuranta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spot-Seuranta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2155BF5D299FD60600CEF170 /* Spot_SeurantaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot_SeurantaApp.swift; sourceTree = "<group>"; };
+		2155BF5F299FD60600CEF170 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2155BF61299FD60800CEF170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2155BF64299FD60800CEF170 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2155BF6A299FD60800CEF170 /* Spot-SeurantaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spot-SeurantaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2155BF6E299FD60800CEF170 /* Spot_SeurantaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot_SeurantaTests.swift; sourceTree = "<group>"; };
+		2155BF74299FD60800CEF170 /* Spot-SeurantaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spot-SeurantaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2155BF78299FD60800CEF170 /* Spot_SeurantaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot_SeurantaUITests.swift; sourceTree = "<group>"; };
+		2155BF7A299FD60800CEF170 /* Spot_SeurantaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot_SeurantaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2155BF87299FD66500CEF170 /* entso.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = entso.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2155BF57299FD60600CEF170 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2155BF67299FD60800CEF170 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2155BF71299FD60800CEF170 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2155BF51299FD60600CEF170 = {
+			isa = PBXGroup;
+			children = (
+				2155BF5C299FD60600CEF170 /* Spot-Seuranta */,
+				2155BF6D299FD60800CEF170 /* Spot-SeurantaTests */,
+				2155BF77299FD60800CEF170 /* Spot-SeurantaUITests */,
+				2155BF5B299FD60600CEF170 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2155BF5B299FD60600CEF170 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2155BF5A299FD60600CEF170 /* Spot-Seuranta.app */,
+				2155BF6A299FD60800CEF170 /* Spot-SeurantaTests.xctest */,
+				2155BF74299FD60800CEF170 /* Spot-SeurantaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2155BF5C299FD60600CEF170 /* Spot-Seuranta */ = {
+			isa = PBXGroup;
+			children = (
+				2155BF5D299FD60600CEF170 /* Spot_SeurantaApp.swift */,
+				2155BF5F299FD60600CEF170 /* ContentView.swift */,
+				2155BF61299FD60800CEF170 /* Assets.xcassets */,
+				2155BF63299FD60800CEF170 /* Preview Content */,
+				2155BF87299FD66500CEF170 /* entso.plist */,
+			);
+			path = "Spot-Seuranta";
+			sourceTree = "<group>";
+		};
+		2155BF63299FD60800CEF170 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2155BF64299FD60800CEF170 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2155BF6D299FD60800CEF170 /* Spot-SeurantaTests */ = {
+			isa = PBXGroup;
+			children = (
+				2155BF6E299FD60800CEF170 /* Spot_SeurantaTests.swift */,
+			);
+			path = "Spot-SeurantaTests";
+			sourceTree = "<group>";
+		};
+		2155BF77299FD60800CEF170 /* Spot-SeurantaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2155BF78299FD60800CEF170 /* Spot_SeurantaUITests.swift */,
+				2155BF7A299FD60800CEF170 /* Spot_SeurantaUITestsLaunchTests.swift */,
+			);
+			path = "Spot-SeurantaUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2155BF59299FD60600CEF170 /* Spot-Seuranta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2155BF7E299FD60800CEF170 /* Build configuration list for PBXNativeTarget "Spot-Seuranta" */;
+			buildPhases = (
+				2155BF56299FD60600CEF170 /* Sources */,
+				2155BF57299FD60600CEF170 /* Frameworks */,
+				2155BF58299FD60600CEF170 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Spot-Seuranta";
+			productName = "Spot-Seuranta";
+			productReference = 2155BF5A299FD60600CEF170 /* Spot-Seuranta.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2155BF69299FD60800CEF170 /* Spot-SeurantaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2155BF81299FD60800CEF170 /* Build configuration list for PBXNativeTarget "Spot-SeurantaTests" */;
+			buildPhases = (
+				2155BF66299FD60800CEF170 /* Sources */,
+				2155BF67299FD60800CEF170 /* Frameworks */,
+				2155BF68299FD60800CEF170 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2155BF6C299FD60800CEF170 /* PBXTargetDependency */,
+			);
+			name = "Spot-SeurantaTests";
+			productName = "Spot-SeurantaTests";
+			productReference = 2155BF6A299FD60800CEF170 /* Spot-SeurantaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2155BF73299FD60800CEF170 /* Spot-SeurantaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2155BF84299FD60800CEF170 /* Build configuration list for PBXNativeTarget "Spot-SeurantaUITests" */;
+			buildPhases = (
+				2155BF70299FD60800CEF170 /* Sources */,
+				2155BF71299FD60800CEF170 /* Frameworks */,
+				2155BF72299FD60800CEF170 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2155BF76299FD60800CEF170 /* PBXTargetDependency */,
+			);
+			name = "Spot-SeurantaUITests";
+			productName = "Spot-SeurantaUITests";
+			productReference = 2155BF74299FD60800CEF170 /* Spot-SeurantaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2155BF52299FD60600CEF170 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					2155BF59299FD60600CEF170 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					2155BF69299FD60800CEF170 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 2155BF59299FD60600CEF170;
+					};
+					2155BF73299FD60800CEF170 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 2155BF59299FD60600CEF170;
+					};
+				};
+			};
+			buildConfigurationList = 2155BF55299FD60600CEF170 /* Build configuration list for PBXProject "Spot-Seuranta" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2155BF51299FD60600CEF170;
+			productRefGroup = 2155BF5B299FD60600CEF170 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2155BF59299FD60600CEF170 /* Spot-Seuranta */,
+				2155BF69299FD60800CEF170 /* Spot-SeurantaTests */,
+				2155BF73299FD60800CEF170 /* Spot-SeurantaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2155BF58299FD60600CEF170 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2155BF88299FD66500CEF170 /* entso.plist in Resources */,
+				2155BF65299FD60800CEF170 /* Preview Assets.xcassets in Resources */,
+				2155BF62299FD60800CEF170 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2155BF68299FD60800CEF170 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2155BF72299FD60800CEF170 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2155BF56299FD60600CEF170 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2155BF60299FD60600CEF170 /* ContentView.swift in Sources */,
+				2155BF5E299FD60600CEF170 /* Spot_SeurantaApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2155BF66299FD60800CEF170 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2155BF6F299FD60800CEF170 /* Spot_SeurantaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2155BF70299FD60800CEF170 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2155BF79299FD60800CEF170 /* Spot_SeurantaUITests.swift in Sources */,
+				2155BF7B299FD60800CEF170 /* Spot_SeurantaUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2155BF6C299FD60800CEF170 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2155BF59299FD60600CEF170 /* Spot-Seuranta */;
+			targetProxy = 2155BF6B299FD60800CEF170 /* PBXContainerItemProxy */;
+		};
+		2155BF76299FD60800CEF170 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2155BF59299FD60600CEF170 /* Spot-Seuranta */;
+			targetProxy = 2155BF75299FD60800CEF170 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2155BF7C299FD60800CEF170 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2155BF7D299FD60800CEF170 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2155BF7F299FD60800CEF170 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Spot-Seuranta/Preview Content\"";
+				DEVELOPMENT_TEAM = 8RVJKWBR8G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.mpajuka.Spot-Seuranta";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2155BF80299FD60800CEF170 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Spot-Seuranta/Preview Content\"";
+				DEVELOPMENT_TEAM = 8RVJKWBR8G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.mpajuka.Spot-Seuranta";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2155BF82299FD60800CEF170 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8RVJKWBR8G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.mpajuka.Spot-SeurantaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spot-Seuranta.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Spot-Seuranta";
+			};
+			name = Debug;
+		};
+		2155BF83299FD60800CEF170 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8RVJKWBR8G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.mpajuka.Spot-SeurantaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spot-Seuranta.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Spot-Seuranta";
+			};
+			name = Release;
+		};
+		2155BF85299FD60800CEF170 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8RVJKWBR8G;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.mpajuka.Spot-SeurantaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Spot-Seuranta";
+			};
+			name = Debug;
+		};
+		2155BF86299FD60800CEF170 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8RVJKWBR8G;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.mpajuka.Spot-SeurantaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Spot-Seuranta";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2155BF55299FD60600CEF170 /* Build configuration list for PBXProject "Spot-Seuranta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2155BF7C299FD60800CEF170 /* Debug */,
+				2155BF7D299FD60800CEF170 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2155BF7E299FD60800CEF170 /* Build configuration list for PBXNativeTarget "Spot-Seuranta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2155BF7F299FD60800CEF170 /* Debug */,
+				2155BF80299FD60800CEF170 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2155BF81299FD60800CEF170 /* Build configuration list for PBXNativeTarget "Spot-SeurantaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2155BF82299FD60800CEF170 /* Debug */,
+				2155BF83299FD60800CEF170 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2155BF84299FD60800CEF170 /* Build configuration list for PBXNativeTarget "Spot-SeurantaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2155BF85299FD60800CEF170 /* Debug */,
+				2155BF86299FD60800CEF170 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2155BF52299FD60600CEF170 /* Project object */;
+}
