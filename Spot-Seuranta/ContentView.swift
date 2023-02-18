@@ -183,6 +183,10 @@ struct ContentView: View
                 }
             }
             .environment(\.defaultMinListRowHeight, 0)
+            .task
+            {
+                await fetchDataFromAPI()
+            }
         }
         Button(action:
         {
@@ -199,10 +203,6 @@ struct ContentView: View
             Text("Sähkön hinta huomenna")
                 .bold()
                 .padding(5)
-        }
-        .task
-        {
-            await fetchDataFromAPI()
         }
         .alert("Huomisen hintoja ei ole vielä julkaistu", isPresented: $showAlert)
         {
