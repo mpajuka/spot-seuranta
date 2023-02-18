@@ -16,7 +16,7 @@ struct EPrice
 }
 
 
-class Parser2 : NSObject, XMLParserDelegate
+class APIParser : NSObject, XMLParserDelegate
 {
     var previous = ""
     var current = ""
@@ -52,10 +52,7 @@ class Parser2 : NSObject, XMLParserDelegate
             {
                 price = (string as NSString).doubleValue
                 price = price/10
-                if (time == returnHour())
-                {
-                    priceNow = price
-                }
+                
             }
             if (time != -1 && price != 0.0 && current == "price.amount")
             {
@@ -68,6 +65,10 @@ class Parser2 : NSObject, XMLParserDelegate
                     }
                     else
                     {
+                        if (time == returnHour())
+                        {
+                            priceNow = price
+                        }
                         todayprices.append(i)
                         previoustimes.append(time)
                     }
@@ -118,9 +119,9 @@ struct ContentView: View
                 Text("Sähkön hinta on nyt")
                     .font(.largeTitle)
                 Spacer()
-                Text("\(String(format: "%.2f c/kWh", priceNow * 1.1))")
+                Text("\(String(format: "%.2f c/kWh", returnPriceNow() * returnCurrentVAT()))")
                     .font(.title)
-                Text("(sis. ALV 10%)")
+                Text("(sis. ALV \(String(format: "%.0f", (returnCurrentVAT() - 1) * 100))%)")
                     .font(.footnote)
                
                 Spacer()
@@ -140,7 +141,7 @@ struct ContentView: View
                     { price in
                         BarMark(
                                 x: .value("Aika", price.currentTime),
-                                y: .value("Hinta", price.currentPrice * 1.1)
+                                y: .value("Hinta", price.currentPrice * returnCurrentVAT())
                             )
                             .foregroundStyle(returnHour() == price.currentTime ? .green : .blue)
                     }
@@ -175,7 +176,7 @@ struct ContentView: View
                                 .bold(returnHour() == curPrice.currentTime ? true : false)
                         }
                         Spacer()
-                        Text("\((String(format: "%.2f c/kWh", curPrice.currentPrice * 1.1)))")
+                        Text("\((String(format: "%.2f c/kWh", curPrice.currentPrice * returnCurrentVAT())))")
                             .foregroundColor(returnHour() == curPrice.currentTime ? .green : .blue)
                             .bold(returnHour() == curPrice.currentTime ? true : false)
                     }
@@ -201,7 +202,7 @@ struct ContentView: View
         }
         .task
         {
-            await fetchData()
+            await fetchDataFromAPI()
         }
         .alert("Huomisen hintoja ei ole vielä julkaistu", isPresented: $showAlert)
         {
@@ -217,13 +218,15 @@ struct ContentView: View
                     {
                         VStack
                         {
+                            Text("Sähkön hinta huomenna")
+                                .font(.title)
                             Chart
                             {
                                 ForEach(entsotomorrow, id: \.currentTime)
                                 { price in
                                     BarMark(
                                         x: .value("Aika", price.currentTime),
-                                        y: .value("Hinta", price.currentPrice * 1.1)
+                                        y: .value("Hinta", price.currentPrice * returnCurrentVAT())
                                     )
                                 }
                             }
@@ -246,16 +249,18 @@ struct ContentView: View
                                 if (curPrice.currentTime == 23)
                                 {
                                     Text("23:00-00:00")
+                                        .foregroundColor(.blue)
                                 }
                                 else
                                 {
                                     Text("\((String(format: "%02d", curPrice.currentTime)))" + ":00-" + "\((String(format: "%02d", curPrice.currentTime+1)))" + ":00")
+                                        .foregroundColor(.blue)
                                 }
                                 Spacer()
-                                Text("\((String(format: "%.2f c/kWh", curPrice.currentPrice * 1.1)))")
+                                Text("\((String(format: "%.2f c/kWh", curPrice.currentPrice * returnCurrentVAT())))")
+                                    .foregroundColor(.blue)
                             }
                         }
-                        .navigationBarTitle("Sähkön hinta huomenna")
                         .environment(\.defaultMinListRowHeight, 0)
                     }
                 }
@@ -263,8 +268,56 @@ struct ContentView: View
         })
     }
     
+    /**
+        Returns the multiplication factor for the electricity price, based on Finland's current electricity VAT
+        The dates between 2022-12-01 and 2023-04-30 have the effective VAT of 10% and dates outside
+        of that range follow the usual 24% rate
+        
+        - Returns:The multiplication factor for calculating price with VAT included
+     */
+    func returnCurrentVAT() -> Double
+    {
+
+        var loweredVATStart = DateComponents()
+        loweredVATStart.year = 2022
+        loweredVATStart.month = 12
+        loweredVATStart.day = 1
+        loweredVATStart.hour = 0
+        loweredVATStart.minute = 0
+        loweredVATStart.second = 0
+        
+        var loweredVATEnd = DateComponents()
+        loweredVATEnd.year = 2023
+        loweredVATEnd.month = 4
+        loweredVATEnd.day = 30
+        loweredVATEnd.hour = 23
+        loweredVATEnd.minute = 59
+        loweredVATEnd.second = 59
+        
+        let userCalendar = Calendar.current
+        let startDate = userCalendar.date(from: loweredVATStart)
+        let endDate = userCalendar.date(from: loweredVATEnd)
+        
+        let today = Date()
+
+        if startDate?.compare(today) == .orderedAscending && endDate?.compare(today) == .orderedDescending {
+            return 1.1
+        } else {
+            return 1.24
+        }
+    }
     
-    func fetchData() async
+    func returnPriceNow() -> Double
+    {
+        for price in entsotoday {
+            if price.currentTime == returnHour() {
+                return price.currentPrice
+            }
+        }
+        return 0
+    }
+    
+    func fetchDataFromAPI() async
     {
         let now = Date()
         let year = Calendar.current.component(.year, from: now)
@@ -310,7 +363,7 @@ struct ContentView: View
         do
         {
             let (data, _) = try await URLSession.shared.data(from: entsourl)
-            let urlparser = Parser2()
+            let urlparser = APIParser()
             let xmlparser = XMLParser(data: data)
             xmlparser.delegate = urlparser
             xmlparser.parse()
