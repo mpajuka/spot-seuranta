@@ -24,4 +24,7 @@ After previous steps are completed, the program can be compiled and ran through 
 
 <hr>
 
-<img src="spot-seuranta-mockup.png" width=400 height=800>
+<p float="left">
+	<img src="spot-seuranta-mockup-today.png" width=340 height=686>
+	<img src="spot-seuranta-mockup-tomorrow.png" width=340 height=686>
+</p>
