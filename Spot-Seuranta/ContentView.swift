@@ -102,12 +102,13 @@ extension Color
 
 struct ContentView: View
 {
+    @Environment(\.scenePhase) var scenePhase
     @State private var entsotoday = [EPrice]()
     @State private var entsotomorrow = [EPrice]()
     @State private var showTomorrow = false
     @State private var tomorrowReleased = false
     @State private var showAlert = false
-    @State var priceNow = 0.0
+    @State private var priceNow = 0.0
     
     var body: some View
     {
@@ -118,9 +119,9 @@ struct ContentView: View
                 Spacer()
                 Text("Sähkön hinta on nyt")
                     .font(.largeTitle)
-                Spacer()
-                Text("\(String(format: "%.2f c/kWh", returnPriceNow() * returnCurrentVAT()))")
+                Text("\(String(format: "%.2f c/kWh", priceNow * returnCurrentVAT()))")
                     .font(.title)
+                Spacer()
                 Text("(sis. ALV \(String(format: "%.0f", (returnCurrentVAT() - 1) * 100))%)")
                     .font(.footnote)
                
@@ -180,13 +181,44 @@ struct ContentView: View
                             .foregroundColor(returnHour() == curPrice.currentTime ? .green : .blue)
                             .bold(returnHour() == curPrice.currentTime ? true : false)
                     }
+                    
                 }
             }
             .environment(\.defaultMinListRowHeight, 0)
-            .task
+            .onAppear()
             {
-                await fetchDataFromAPI()
+                Task
+                {
+                    await fetchDataFromAPI()
+                }
             }
+            .onChange(of: scenePhase)
+            { newPhase in
+                if newPhase == .active
+                {
+                    Task
+                    {
+                        showTomorrow = false
+                        await fetchDataFromAPI()
+                    }
+                    
+                }
+                else if newPhase == .inactive
+                {
+                    Task
+                    {
+                        await fetchDataFromAPI()
+                    }
+                }
+                else if newPhase == .background
+                {
+                    Task
+                    {
+                        await fetchDataFromAPI()
+                    }
+                }
+            }
+            
         }
         Button(action:
         {
@@ -204,6 +236,7 @@ struct ContentView: View
                 .bold()
                 .padding(5)
         }
+        
         .alert("Huomisen hintoja ei ole vielä julkaistu", isPresented: $showAlert)
         {
             Button("OK", role: .cancel) {}
@@ -219,7 +252,7 @@ struct ContentView: View
                         VStack
                         {
                             Text("Sähkön hinta huomenna")
-                                .font(.title)
+                                .font(.largeTitle)
                             Chart
                             {
                                 ForEach(entsotomorrow, id: \.currentTime)
@@ -268,6 +301,15 @@ struct ContentView: View
         })
     }
     
+    
+    func performPriceRefresh()
+    {
+        for price in entsotoday {
+            if price.currentTime == returnHour() {
+                priceNow = price.currentPrice
+            }
+        }
+    }
     /**
         Returns the multiplication factor for the electricity price, based on Finland's current electricity VAT
         The dates between 2022-12-01 and 2023-04-30 have the effective VAT of 10% and dates outside
@@ -307,18 +349,9 @@ struct ContentView: View
         }
     }
     
-    func returnPriceNow() -> Double
-    {
-        for price in entsotoday {
-            if price.currentTime == returnHour() {
-                return price.currentPrice
-            }
-        }
-        return 0
-    }
-    
     func fetchDataFromAPI() async
     {
+        performPriceRefresh()
         let now = Date()
         let year = Calendar.current.component(.year, from: now)
         let month = Calendar.current.component(.month, from: now)
@@ -370,6 +403,7 @@ struct ContentView: View
             priceNow = urlparser.priceNow
             entsotoday = urlparser.todayprices
             entsotomorrow = urlparser.tomorrowprices
+            tomorrowReleased = false
             if (entsotomorrow.count > 1)
             {
                 tomorrowReleased = true
