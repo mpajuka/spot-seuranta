@@ -222,6 +222,10 @@ struct ContentView: View
         }
         Button(action:
         {
+            Task
+            {
+                await fetchDataFromAPI()
+            }
             if (tomorrowReleased == false)
             {
                 showAlert = true
