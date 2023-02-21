@@ -1,4 +1,4 @@
-# :electric_plug: spot-seuranta
+# :bulb: spot-seuranta
 
 This repository holds the source code for a Swift app which can be used to track Finland's electricity spot prices for 'today' and 'tomorrow'. The data is 
 asynchronously fetched from [ENTSO-E](https://transparency.entsoe.eu/) in XML-format, using their RESTful API, parsed, and then displayed in 
