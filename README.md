@@ -5,8 +5,11 @@ asynchronously fetched from [ENTSO-E](https://transparency.entsoe.eu/) in XML-fo
 the SwiftUI. The main language in the app at the moment is only Finnish. 
 
 ## :question: How to use 
+As the app is not released in the Apple App Store, the only way to use this app is if you have an Apple computer. With that in order you can locally
+then build that app in your computer, or if you have an iPhone, test that in there as well.
 
-In order to use the app you must submit a ticket to ENTSO-E to receive your own security token (API key). After obtaining the key, the program can be used after placing the key in an `entso.plist` file in the project directory.
+In order to use the app you must first submit a ticket to ENTSO-E to receive your own security token (API key). After obtaining the key, the program 
+can be used after placing the key in an `entso.plist` file in the project directory.
 
 The file's contents should be as follows, replacing the string value with your own security token:
 ```xml
@@ -20,7 +23,11 @@ The file's contents should be as follows, replacing the string value with your o
 </plist>
 ```
 
-After previous steps are completed, the program can be compiled and ran through Xcode or locally through a personal device.
+Or in Xcode: Right-click the Spot-Seuranta folder > New File, scroll down to find 'Property List' file, save it as 'entso'. After the file is
+created, add new entry with the key 'API_KEY' and with your personal security token in the value section.
+
+
+After previous steps are completed, the program can be ran through Xcode or through a personal device.
 
 <hr>
 
