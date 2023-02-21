@@ -23,8 +23,8 @@ The file's contents should be as follows, replacing the string value with your o
 </plist>
 ```
 
-Or in Xcode: Right-click the Spot-Seuranta folder > New File, scroll down to find 'Property List' file, save it as 'entso'. After the file is
-created, add new entry with the key 'API_KEY' and with your personal security token in the value section.
+Or in Xcode: Right-click the Spot-Seuranta folder > New File, scroll down to find `Property List` file, save it as `entso`. After the file is
+created, add new entry with the key `API_KEY` and with your personal security token in the value section.
 
 
 After previous steps are completed, the program can be ran through Xcode or through a personal device.
