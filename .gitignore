@@ -1,4 +1,6 @@
 Spot-Seuranta/entso.plist
-Spot-Seuranta.xcodeproj/
 .DS_Store
+xcuserdata/
+Spot-SeurantaTests/
+Spot-SeurantaUITests/
 
