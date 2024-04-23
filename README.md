@@ -2,7 +2,13 @@
 
 # :bulb: Spot-Seuranta
 
+<img src="spot-seuranta-mockup-today.png" width=340 height=686>
+<img src="spot-seuranta-mockup-tomorrow.png" width=340 height=686>
 </div>
+
+#
+
+<div>
 
 This repository holds the source code for a Swift app which can be used to track Finland's electricity spot prices for 'today' and 'tomorrow'. The data is fetched from [ENTSO-E](https://transparency.entsoe.eu/) in XML-format, using their RESTful API, parsed, and then displayed in 
 the SwiftUI. The main language in the app at the moment is only Finnish. 
@@ -29,12 +35,4 @@ The file's contents should be as follows, replacing the string value with your o
 <i>Alternatively in Xcode: Right-click the Spot-Seuranta folder > New File, scroll down to find `Property List` file, save it as `entso`. After the file is
 created, add new entry with the key `API_KEY` and with your personal security token in the value section.</i>
 
-
 After previous steps are completed, the program can be ran through Xcode or through a personal device.
-
-<hr>
-
-<p float="left">
-	<img src="spot-seuranta-mockup-today.png" width=340 height=686>
-	<img src="spot-seuranta-mockup-tomorrow.png" width=340 height=686>
-</p>
