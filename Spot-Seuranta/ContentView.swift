@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  test
+//  Spot-Seuranta
 //
 //  Created by Miska Pajukangas on 2023-01-18.
 //
@@ -27,6 +27,7 @@ class APIParser : NSObject, XMLParserDelegate
     var tomorrowprices = [EPrice]()
     var previoustimes = [Int]()
     var priceNow = 0.0
+    var priceNext = 0.0
     
     func parser(_ parser: XMLParser, didStartElement elementName: String,
         namespaceURI: String?, qualifiedName qName: String?,
@@ -69,6 +70,10 @@ class APIParser : NSObject, XMLParserDelegate
                         {
                             priceNow = price
                         }
+                        if (time == returnHour() + 1)
+                        {
+                            priceNext = price
+                        }
                         todayprices.append(i)
                         previoustimes.append(time)
                     }
@@ -109,6 +114,7 @@ struct ContentView: View
     @State private var tomorrowReleased = false
     @State private var showAlert = false
     @State private var priceNow = 0.0
+    @State private var priceNext = 0.0
     
     var body: some View
     {
@@ -128,12 +134,12 @@ struct ContentView: View
                 Spacer()
                 if (returnHour() == 23)
                 {
-                    Text("Uusi hinta päivittyy klo: 00:00")
+                    Text("Uusi hinta " + "\(String(format: "(%.2f c/kWh)", priceNext * returnCurrentVAT()))" +  " päivittyy klo: 00:00")
                         .font(.callout)
                 }
                 else
                 {
-                    Text("Uusi hinta päivittyy klo " + "\(String(format: "%02d:00", returnHour() + 1))")
+                    Text("Uusi hinta " + "\(String(format: "(%.2f c/kWh)", priceNext * returnCurrentVAT()))" + " päivittyy klo " + "\(String(format: "%02d:00", returnHour() + 1))")
                         .font(.callout)
                 }
                 VStack
@@ -312,6 +318,9 @@ struct ContentView: View
             if price.currentTime == returnHour() {
                 priceNow = price.currentPrice
             }
+            if price.currentTime == returnHour() + 1 {
+                priceNext = price.currentPrice
+            }
         }
     }
     /**
@@ -405,6 +414,7 @@ struct ContentView: View
             xmlparser.delegate = urlparser
             xmlparser.parse()
             priceNow = urlparser.priceNow
+            priceNext = urlparser.priceNext
             entsotoday = urlparser.todayprices
             entsotomorrow = urlparser.tomorrowprices
             tomorrowReleased = false
@@ -428,4 +438,3 @@ struct ContentView: View
         }
     }
 }
-
